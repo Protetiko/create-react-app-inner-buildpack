@@ -58,5 +58,8 @@ cp "$BP_DIR/.profile.d/inject_react_app_env.sh" "$profile_d_dir/"
 #   * https://docs.npmjs.com/private-modules/ci-server-config
 export_env_dir "$ENV_DIR" '^(REACT_APP_|NODE_|NPM_)'
 
+# Export Heroku SOURCE_VERSION for using while a build
+export REACT_APP_SOURCE_VERSION=$SOURCE_VERSION
+
 # Build the javascript bundle
 npm run build
